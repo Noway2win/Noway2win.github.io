@@ -1,0 +1,142 @@
+.header {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  background-image: url("../images/header__background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 27px 15px 208px;
+}
+.nav {
+  position: absolute;
+  width: 100%;
+}
+.nav__menu-button {
+  background-color: transparent;
+  border: none;
+}
+.advert {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+.advert__logo {
+  display: block;
+  width: 70px;
+  height: 70px;
+  background-image: url("images/header__logo_mobile.png");
+}
+.advert__title {
+  font-family: "Roboto Slab", serif;
+  font-size: 20px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.4;
+  letter-spacing: 1px;
+  color: #0d3351;
+}
+.advert__subtitle {
+  font-family: "Roboto Slab", serif;
+  font-size: 50px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.96;
+  letter-spacing: -1.25px;
+  text-align: center;
+  color: #0d3351;
+  margin-bottom: 43px;
+}
+.advert__choice-button {
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  color: #ffffff;
+  text-align: center;
+  width: 202px;
+  height: 47px;
+  background-color: #33c7fd;
+  border: none;
+}
+.voyage__picture {
+  position: relative;
+  display: block;
+  width: 290px;
+  height: 229px;
+  overflow: hidden;
+}
+.voyage__picture > img {
+  position: absolute;
+  /* top: -75%; */
+  display: block;
+  width: 100%;
+  min-height: 100%;
+  height: auto;
+}
+.voyage_for-desktop {
+  display: none;
+}
+@media (min-width: 768px) {
+  .header {
+    height: 608px;
+  }
+  .advert__title {
+    font-size: 26px;
+    line-height: 1.85;
+    letter-spacing: 1.3px;
+  }
+  .advert__subtitle {
+    font-size: 72px;
+    line-height: 0.67;
+    letter-spacing: -1.8px;
+    margin-bottom: 23px;
+  }
+  .voyage__picture {
+    width: 345px;
+    height: 272px;
+  }
+}
+@media (min-width: 1440px) {
+  .header {
+    height: 648px;
+  }
+  .advert__logo {
+    width: 88px;
+    height: 88px;
+    background-image: url("images/header__logo_desktop.png");
+  }
+  .advert__title {
+    font-size: 36px;
+    line-height: 1.33;
+    letter-spacing: 1.8px;
+  }
+  .advert__subtitle {
+    font-size: 100px;
+    letter-spacing: -2.5px;
+    margin-bottom: 57px;
+  }
+  .voyage__picture {
+    width: 555px;
+    height: 215px;
+  }
+  .voyage__picture_large {
+    height: 437px;
+  }
+  .voyage__picture_small {
+    height: 113px;
+  }
+  .voyage__picture_small > img {
+    top: -75%;
+  }
+  .voyage_for-desktop {
+    display: block;
+  }
+}
