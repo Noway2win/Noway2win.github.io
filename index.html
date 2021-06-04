@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voyage</title>
+</head>
+
+<body>
+    <header class='header'>
+        <nav class='nav'>
+            <button class="nav__menu-button"></button>
+        </nav>
+        <section class='advert'>
+            <picture>
+                <source srcset="./images/header__logo_mobile.png" media="(max-width: 1024px)" />
+                <img src="./images/header__logo_desktop.png" alt="Лого сайта"/>
+            </picture>
+            <h1 class='advert__title'>Морские прогулки</h1>
+            <h2 class='advert__subtitle'>ПО ЧЕРНОМУ МОРЮ</h2>
+            <button class='advert__choice-button'>Выбрать круиз</button>
+        </section>
+    </header>
+    <main class='catalog'>
+        <h3 class="catalog__title">Каталог круизов</h3>
+        <p class="catalog__sort">Сортировать товары по<span>
+                <select name="select" id="select">
+                    <option value="1">Цене</option>
+                    <option value="2">Скидке</option>
+                    <option value="3">Продолжительности</option>
+                </select></span></p>
+        <article class='voyage'>
+            <picture>
+                <source srcset="./images/lighthouse_mobile.jpg" media="(max-width: 425px)" />
+                <source srcset="./images/lighthouse_tablet.jpg" media="(max-width: 1024px)" />
+                <img src="./images/lighthouse_desktop.jpg" alt="Круиз в анапу"/>
+            </picture>
+            <a href="#" class="voyage__name">Морская круиз в Анапу</a>
+            <p class="voyage__description">Маршрут: Сочи-Лазаревское-Геленджик-Анапа</p>
+            <p class="voyage__description">Продолжительность: 10 ч. 0 мин.</p>
+            <p class="voyage__prise">49 000 руб.</p>
+        </article>
+        <article class='voyage'>
+            <picture>
+                <source srcset="./images/sochi_mobile.jpg" media="(max-width: 425px)" />
+                <source srcset="./images/sochi_tablet.jpg" media="(max-width: 1024px)" />
+                <img src="./images/sochi_desktop.jpg" alt="Обзорная морская экскурсия"/>
+            </picture>
+            <a href="#" class="voyage__name">Обзорная морская
+                прогулка с экскурсией</a>
+            <p class="voyage__description">Маршрут: Сочи-Адлер-Сочи
+                (без высадки)</p>
+            <p class="voyage__description">Продолжительность: 1 ч. 0 мин.</p>
+            <p class="voyage__prise">5000 руб.</p>
+        </article>
+        <article class='voyage'>
+            <picture>
+                <source srcset="./images/gelenjick_mobile.jpg" media="(max-width: 425px)" />
+                <source srcset="./images/gelenjick_tablet.jpg" media="(max-width: 1024px)" />
+                <img src="./images/gelenjick_desktop.jpg" alt="Морская прогулка в Геленджик"/>
+            </picture>
+            <a href="#" class="voyage__name">Морская прогулка
+                в Геленджик</a>
+            <p class="voyage__description">Маршрут: Сочи-Туапсе-Геленджик</p>
+            <p class="voyage__description">Продолжительность: 12 ч. 30 мин.</p>
+            <p class="voyage__prise">7 000 руб</p>
+        </article>
+        <article class='voyage'>
+            <picture>
+                <source srcset="./images/novorossiysk_mobile.jpg" media="(max-width: 425px)" />
+                <source srcset="./images/novorossiysk_tablet.jpg" media="(max-width: 1024px)" />
+                <img src="./images/novorossiysk_desktop.jpg" alt="Морской круиз в новороссийск"/>
+            </picture>
+            <a href="#" class="voyage__name">Морской круиз
+                в Новороссийск</a>
+            <p class="voyage__description">Маршрут: Сочи-Геленджик-Новороссйиск-Геленджик-Сочи</p>
+            <p class="voyage__description">Продолжительность: 13 ч. 0 мин.</p>
+            <p class="voyage__prise">14 800 руб.</p>
+        </article>
+        <button class="catalog__expand-button">Больше круизов</button>
+    </main>
+    <footer>
+        <h6 class="footer__title">Будь на связи</h6>
+        <div class="footer__media"></div>
+        <p class="footer__phone-number">8 800 500-61-05</p>
+        <p class="footer__company-title">2016 ООО "Городские круизы"</p>
+    </footer>
+</body>
+
+</html>
