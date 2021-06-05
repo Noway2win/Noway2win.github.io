@@ -218,6 +218,33 @@
   font-family: "Raleway", sans-serif;
   font-size: 14px;
 }
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer__title {
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  color: #0d3351;
+}
+.footer__media-link {
+  text-decoration: none;
+  color: #0d3351;
+  font-size: 30px;
+}
+.footer__phone-number {
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: #0d3351;
+}
+.footer__company-title {
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  color: #0d3351;
+}
 @media (min-width: 768px) {
   .header {
     height: 608px;
@@ -244,6 +271,10 @@
   .voyage__picture {
     width: 345px;
     height: 272px;
+  }
+  .footer {
+    flex-direction: row;
+    align-items: center;
   }
 }
 @media (min-width: 1440px) {
