@@ -177,10 +177,8 @@
 .voyage__name_head {
   margin: 0;
   padding: 0;
-  font-size: inherit;
-  font-style: inherit;
-  font-weight: inherit;
-  color: inherit;
+
+  all: inherit;
 }
 .voyage__name::after {
   position: absolute;
