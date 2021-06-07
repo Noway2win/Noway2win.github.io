@@ -1,8 +1,10 @@
 .header {
     position: relative;
 
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+        flex-direction: column;
 
     width: 100%;
     height: 600px;
@@ -15,15 +17,22 @@
 
     align-items: center;
     -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
     -ms-flex-align: center;
+    -ms-flex-direction: column;
 }
 .nav {
     position: absolute;
 
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 
     width: 100%;
 
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
 }
 .nav__menu-button {
@@ -38,14 +47,19 @@
     display: none;
 }
 .advert {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+        flex-direction: column;
 
     height: 100%;
 
     align-items: center;
     -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
     -ms-flex-align: center;
+    -ms-flex-direction: column;
 }
 .advert__logo {
     display: block;
@@ -106,8 +120,10 @@
     background-color: darkblue;
 }
 .catalog {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+        flex-direction: column;
 
     width: 100%;
     padding: 15px 0;
@@ -116,7 +132,10 @@
 
     align-items: center;
     -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
     -ms-flex-align: center;
+    -ms-flex-direction: column;
 }
 .catalog__title {
     text-align: center;
@@ -148,27 +167,40 @@
     font-style: italic;
 }
 .catalog-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+        flex-direction: column;
+
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -ms-flex-direction: column;
 }
 .voyage {
     position: relative;
 
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+        flex-direction: column;
 
-    box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+            box-sizing: content-box;
     width: 100%;
     max-width: 290px;
     padding-top: 20px;
-    background-size: cover;
+
     text-align: left;
 
     background: transparent;
+    background-size: cover;
 
     align-items: center;
     -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
     -ms-flex-align: center;
+    -ms-flex-direction: column;
 }
 .voyage_top::after {
     position: absolute;
@@ -191,24 +223,24 @@
     font-weight: 300;
 }
 .voyage_sale::after {
-  position: absolute;
-  z-index: 10;
-  right: 32px;
+    position: absolute;
+    z-index: 10;
+    right: 32px;
 
-  width: 89px;
-  height: 101px;
-  padding: 30px 11px 39px 13px;
+    width: 89px;
+    height: 101px;
+    padding: 30px 11px 39px 13px;
 
-  content: "Акция";
-  text-align: center;
+    content: "Акция";
+    text-align: center;
 
-  color: #ffffff;
-  background-color: transparent;
-  background-image: url("./images/sale_tag.png");
+    color: #ffffff;
+    background-color: transparent;
+    background-image: url("./images/sale_tag.png");
 
-  font-family: "Raleway", sans-serif;
-  font-size: 14px;
-  font-weight: 300;
+    font-family: "Raleway", sans-serif;
+    font-size: 14px;
+    font-weight: 300;
 }
 .voyage__picture {
     position: relative;
@@ -231,7 +263,8 @@
     min-height: 100%;
 }
 .voyage__descr {
-    box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+            box-sizing: content-box;
     max-width: 100%;
     margin-top: 0;
     padding: 30px 27px 42px 22px;
@@ -307,24 +340,36 @@
     background-color: darkblue;
 }
 .footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+        flex-direction: column;
 
     padding-top: 29px;
 
     align-items: center;
     -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
     -ms-flex-align: center;
+    -ms-flex-direction: column;
 }
 .footer-links {
     display: none;
 }
 .contact-info,
 .contact-links {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+        flex-direction: column;
 
     align-items: center;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -ms-flex-align: center;
+    -ms-flex-direction: column;
 }
 .footer__title {
     margin: 0;
@@ -360,10 +405,14 @@
         height: 608px;
     }
     .nav-info {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
 
         min-width: 50%;
 
+        -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
         justify-content: space-evenly;
     }
     .nav-info__selector {
@@ -381,16 +430,21 @@
         font-style: normal;
     }
     .catalog-list {
-        flex-direction: row;
+            flex-direction: row;
 
         max-width: 100%;
 
         align-items: stretch;
         -webkit-box-align: start;
+        -webkit-box-direction: normal;
+        -webkit-box-orient: horizontal;
         -webkit-box-pack: center;
+        -ms-flex-align: stretch;
         -ms-flex-align: start;
+        -ms-flex-direction: row;
         -ms-flex-pack: center;
-        flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
         justify-content: center;
     }
     .voyage {
@@ -422,18 +476,30 @@
         height: 207px;
     }
     .footer {
-        flex-direction: row;
+            flex-direction: row;
 
         align-items: center;
         -webkit-box-align: center;
+        -webkit-box-direction: normal;
+        -webkit-box-orient: horizontal;
+        -webkit-box-pack: space-evenly;
         -ms-flex-align: center;
+        -ms-flex-direction: row;
         justify-content: space-evenly;
     }
+
     .footer-links {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
+            flex-direction: column;
 
         align-items: flex-start;
+        -webkit-box-align: start;
+        -webkit-box-direction: normal;
+        -webkit-box-orient: vertical;
+        -ms-flex-align: start;
+        -ms-flex-direction: column;
     }
     .footer-links__item {
         text-decoration: none;
@@ -445,10 +511,17 @@
     }
     .contact-info,
     .contact-links {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
+            flex-direction: column;
 
         align-items: flex-start;
+        -webkit-box-align: start;
+        -webkit-box-direction: normal;
+        -webkit-box-orient: vertical;
+        -ms-flex-align: start;
+        -ms-flex-direction: column;
     }
 }
 @media (min-width: 1440px) {
@@ -484,7 +557,8 @@
         grid-template-columns: 555px 30px 555px;
     }
     .voyage {
-        box-sizing: content-box;
+        -webkit-box-sizing: content-box;
+                box-sizing: content-box;
         width: 100%;
         max-width: 555px;
         height: auto;
@@ -539,7 +613,8 @@
         top: -75%;
     }
     .voyage__descr {
-        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
         width: 555px;
         max-width: 555px;
         height: 190px;
@@ -547,4 +622,9 @@
     .voyage_for-desktop {
         display: block;
     }
+}
+@media all and (min-width: 768px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .footer {
+    justify-content: space-between;
+    padding: 0 25%;
 }
