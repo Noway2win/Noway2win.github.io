@@ -1,56 +1,53 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Raleway&family=Roboto+Slab&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&family=Roboto+Slab&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="fonticon.css" />
     <link rel="stylesheet" href="normalize.css" />
     <link rel="stylesheet" href="style.css" />
     <title>Voyage</title>
-  </head>
+</head>
 
-  <body>
+<body>
     <header class="header">
-      <nav class="nav">
-        <button class="nav__menu-button">
-          <img src="./images/menu.png" alt="Кнопка меню" />
-        </button>
-      </nav>
-      <section class="advert">
-        <img
-          src="./images/placeholder.png"
-          alt="Логотип сайта"
-          class="advert__logo"
-        />
-        <h1 class="advert__title">Морские прогулки</h1>
-        <h2 class="advert__subtitle">ПО ЧЕРНОМУ МОРЮ</h2>
-        <button class="advert__choice-button">Выбрать круиз</button>
-        <img src="./images/header__line.png" alt="Декоративная линия" />
-      </section>
+        <nav class="nav">
+            <button class="nav__menu-button">
+                <img src="./images/menu.png" alt="Кнопка меню" />
+            </button>
+        </nav>
+        <section class="advert">
+            <img src="./images/placeholder.png" alt="Логотип сайта" class="advert__logo" />
+            <h1 class="advert__title">Морские прогулки</h1>
+            <h2 class="advert__subtitle">ПО ЧЕРНОМУ МОРЮ</h2>
+            <button class="advert__choice-button">Выбрать круиз</button>
+            <img src="./images/header__line.png" alt="Декоративная линия" />
+        </section>
     </header>
 
     <main class="catalog">
-      <h3 class="catalog__title">Каталог круизов</h3>
-      <label class="catalog__sort">
-        <span>Сортировать товары по</span>
-        <select class="catalog__sort_list" name="sort_select" id="sort_select">
-          <option value="1">цене</option>
-          <option value="2">скидке</option>
-          <option value="3">продолжительности</option>
-        </select>
-      </label>
-      <article class="voyage">
-        <div class="voyage__picture voyage__picture_large">
-          <img src="images/lighthouse_desktop.jpg" alt="Круиз в анапу" />
+        <div class="catalog-menu">
+            <h3 class="catalog__title">Каталог круизов</h3>
+            <label class="catalog__sort">
+                <span>Сортировать товары по</span>
+                <select class="catalog__sort_list" name="sort_select" id="sort_select">
+                    <option value="1">цене</option>
+                    <option value="2">скидке</option>
+                    <option value="3">продолжительности</option>
+                </select>
+            </label>
         </div>
-        <!-- <picture>
+        <div class="catalog-list">
+            <article class="voyage">
+                <div class="voyage__picture voyage__picture_large">
+                    <img src="images/lighthouse_desktop.jpg" alt="Круиз в анапу" />
+                </div>
+                <!-- <picture>
           <source
             srcset="./images/lighthouse_mobile.jpg"
             media="(max-width: 425px)"
@@ -61,26 +58,27 @@
           />
           <img src="./images/lighthouse_desktop.jpg" alt="Круиз в анапу" />
         </picture> -->
-        <div class="voyage__descr">
-          <a href="#" class="voyage__name"
-            ><h6 class="voyage__name_head">Морской круиз в Анапу</h6></a
-          >
-          <p class="voyage__details">
-            <span class="voyage__details_bold">Маршрут:</span>
-            Сочи-Лазаревское-Геленджик-Анапа
-          </p>
-          <p class="voyage__details">
-            <span class="voyage__details_bold">Продолжительность:</span> 10 ч. 0
-            мин.
-          </p>
-          <p class="voyage__prise">49 000 руб.</p>
-        </div>
-      </article>
-      <article class="voyage">
-        <div class="voyage__picture voyage__picture_small">
-          <img src="images/sochi_large.jpg" alt="Обзорная морская экскурсия" />
-        </div>
-        <!-- <picture>
+                <div class="voyage__descr">
+                    <a href="#" class="voyage__name">
+                        <h6 class="voyage__name_head">Морской круиз в Анапу</h6>
+                    </a>
+                    <p class="voyage__details">
+                        <span class="voyage__details_bold">Маршрут:</span>
+                        Сочи-Лазаревское-Геленджик-Анапа
+                    </p>
+                    <p class="voyage__details">
+                        <span class="voyage__details_bold">Продолжительность:</span> 10 ч. 0
+                        мин.
+                    </p>
+                    <p class="voyage__prise">49 000 руб.</p>
+                </div>
+            </article>
+            <div class="explorer-divider"></div>
+            <article class="voyage">
+                <div class="voyage__picture voyage__picture_small">
+                    <img src="images/sochi_large.jpg" alt="Обзорная морская экскурсия" />
+                </div>
+                <!-- <picture>
           <source
             srcset="./images/sochi_mobile.jpg"
             media="(max-width: 425px)"
@@ -94,31 +92,29 @@
             alt="Обзорная морская экскурсия"
           />
         </picture> -->
-        <div class="voyage__descr">
-          <a href="#" class="voyage__name"
-            ><h6 class="voyage__name_head">
-              Обзорная морская прогулка с экскурсией
-            </h6></a
-          >
-          <p class="voyage__details">
-            <span class="voyage__details_bold">Маршрут:</span> Сочи-Адлер-Сочи
-            (без высадки)
-          </p>
-          <p class="voyage__details">
-            <span class="voyage__details_bold">Продолжительность:</span> 1 ч. 0
-            мин.
-          </p>
-          <p class="voyage__prise">5000 руб.</p>
-        </div>
-      </article>
-      <article class="voyage">
-        <div class="voyage__picture voyage__picture_small">
-          <img
-            src="images/gelenjick_tablet.jpg"
-            alt="Обзорная морская экскурсия"
-          />
-        </div>
-        <!-- <picture>
+                <div class="voyage__descr">
+                    <a href="#" class="voyage__name">
+                        <h6 class="voyage__name_head">
+                            Обзорная морская прогулка с экскурсией
+                        </h6>
+                    </a>
+                    <p class="voyage__details">
+                        <span class="voyage__details_bold">Маршрут:</span> Сочи-Адлер-Сочи
+                        (без высадки)
+                    </p>
+                    <p class="voyage__details">
+                        <span class="voyage__details_bold">Продолжительность:</span> 1 ч. 0
+                        мин.
+                    </p>
+                    <p class="voyage__prise">5000 руб.<span class="voyage__prise_deleted">15000 руб.</span></p>
+                </div>
+            </article>
+            <div class="explorer-divider"></div>
+            <article class="voyage">
+                <div class="voyage__picture voyage__picture_small">
+                    <img src="images/gelenjick_tablet.jpg" alt="Обзорная морская экскурсия" />
+                </div>
+                <!-- <picture>
           <source
             srcset="./images/gelenjick_mobile.jpg"
             media="(max-width: 425px)"
@@ -132,28 +128,24 @@
             alt="Морская прогулка в Геленджик"
           />
         </picture> -->
-        <div class="voyage__descr">
-          <a href="#" class="voyage__name"
-            ><h6 class="voyage__name_head">Морская прогулка в Геленджик</h6></a
-          >
-          <p class="voyage__details">
-            <span class="voyage__details_bold">Маршрут:</span>
-            Сочи-Туапсе-Геленджик
-          </p>
-          <p class="voyage__details">
-            <span class="voyage__details_bold">Продолжительность:</span> 12 ч.
-            30 мин.
-          </p>
-          <p class="voyage__prise">7 000 руб</p>
-        </div>
-      </article>
-      <article class="voyage">
-        <img
-          src="images/novorossiysk_desktop.jpg"
-          alt="Обзорная морская экскурсия"
-          class="voyage__picture"
-        />
-        <!-- <picture>
+                <div class="voyage__descr">
+                    <a href="#" class="voyage__name">
+                        <h6 class="voyage__name_head">Морская прогулка в Геленджик</h6>
+                    </a>
+                    <p class="voyage__details">
+                        <span class="voyage__details_bold">Маршрут:</span>
+                        Сочи-Туапсе-Геленджик
+                    </p>
+                    <p class="voyage__details">
+                        <span class="voyage__details_bold">Продолжительность:</span> 12 ч.
+                        30 мин.
+                    </p>
+                    <p class="voyage__prise">7 000 руб<span class="voyage__prise_deleted">10000 руб.</span></p>
+                </div>
+            </article>
+            <article class="voyage">
+                <img src="images/novorossiysk_desktop.jpg" alt="Обзорная морская экскурсия" class="voyage__picture" />
+                <!-- <picture>
           <source
             srcset="./images/novorossiysk_mobile.jpg"
             media="(max-width: 425px)"
@@ -167,63 +159,55 @@
             alt="Морской круиз в новороссийск"
           />
         </picture> -->
-        <div class="voyage__descr">
-          <a href="#" class="voyage__name"
-            ><h6 class="voyage__name_head">Морской круиз в Новороссийск</h6></a
-          >
-          <p class="voyage__details">
-            <span class="voyage__details_bold">Маршрут:</span> Сочи-Геленджик-
-            Новороссийск-Геленджик-Сочи
-          </p>
-          <p class="voyage__details">
-            <span class="voyage__details_bold">Продолжительность:</span> 13 ч. 0
-            мин.
-          </p>
-          <p class="voyage__prise">14 800 руб.</p>
+                <div class="voyage__descr">
+                    <a href="#" class="voyage__name">
+                        <h6 class="voyage__name_head">Морской круиз в Новороссийск</h6>
+                    </a>
+                    <p class="voyage__details">
+                        <span class="voyage__details_bold">Маршрут:</span> Сочи-Геленджик-
+                        Новороссийск-Геленджик-Сочи
+                    </p>
+                    <p class="voyage__details">
+                        <span class="voyage__details_bold">Продолжительность:</span> 13 ч. 0
+                        мин.
+                    </p>
+                    <p class="voyage__prise">14 800 руб.</p>
+                </div>
+            </article>
+            <div class="explorer-divider"></div>
+            <article class="voyage voyage_for-desktop">
+                <img src="images/AbraDurso__desktop.jpg" alt="Обзорная морская экскурсия" class="voyage__picture" />
+                <div class="voyage__descr">
+                    <a href="#" class="voyage__name">
+                        <h6 class="voyage__name_head">
+                            Морская прогулка в Абрау-Дюрсо
+                        </h6>
+                    </a>
+                    <p class="voyage__details">
+                        <span class="voyage__details_bold">Маршрут:</span> Сочи-Абрау-Дюрсо
+                    </p>
+                    <p class="voyage__details">
+                        <span class="voyage__details_bold">Продолжительность:</span> 11 ч. 0
+                        мин.
+                    </p>
+                    <p class="voyage__prise">14 800 руб.</p>
+                </div>
+            </article>
+            <div class="explorer-divider"></div>
         </div>
-      </article>
-      <article class="voyage voyage_for-desktop">
-        <img
-          src="images/AbraDurso__desktop.jpg"
-          alt="Обзорная морская экскурсия"
-          class="voyage__picture"
-        />
-        <div class="voyage__descr">
-          <a href="#" class="voyage__name"
-            ><h6 class="voyage__name_head">
-              Морская прогулка в Абрау-Дюрсо
-            </h6></a
-          >
-          <p class="voyage__details">
-            <span class="voyage__details_bold">Маршрут:</span> Сочи-Абрау-Дюрсо
-          </p>
-          <p class="voyage__details">
-            <span class="voyage__details_bold">Продолжительность:</span> 11 ч. 0
-            мин.
-          </p>
-          <p class="voyage__prise">14 800 руб.</p>
-        </div>
-      </article>
-      <button class="catalog__expand-button">Больше круизов</button>
+        <button class="catalog__expand-button">Больше круизов</button>
     </main>
     <footer class="footer">
-      <h6 class="footer__title">Будь на связи</h6>
-      <div class="footer__media">
-        <a class="footer__media-link" href="#"
-          ><span class="icon-vk-with-circle"></span
-        ></a>
-        <a class="footer__media-link" href="#"
-          ><span class="icon-odnoklassniki-square"></span
-        ></a>
-        <a class="footer__media-link" href="#"
-          ><span class="icon-youtube-with-circle"></span
-        ></a>
-        <a class="footer__media-link" href="#"
-          ><span class="icon-instagram-with-circle"></span
-        ></a>
-      </div>
-      <p class="footer__phone-number">8 800 500-61-05</p>
-      <p class="footer__company-title">2016 ООО "Городские круизы"</p>
+        <h6 class="footer__title">Будь на связи:</h6>
+        <div class="footer__media">
+            <a class="footer__media-link" href="#"><span class="icon-vk-with-circle"></span></a>
+            <a class="footer__media-link" href="#"><span class="icon-odnoklassniki-square"></span></a>
+            <a class="footer__media-link" href="#"><span class="icon-youtube-with-circle"></span></a>
+            <a class="footer__media-link" href="#"><span class="icon-instagram-with-circle"></span></a>
+        </div>
+        <p class="footer__phone-number">8 800 500-61-05</p>
+        <p class="footer__company-title">2016 ООО "Городские круизы"</p>
     </footer>
-  </body>
+</body>
+
 </html>
