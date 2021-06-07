@@ -21,19 +21,24 @@
                 <img src="./images/menu.png" alt="Кнопка меню" />
             </button>
             <div class="nav-info">
-                <p><select name="Аккаунт" id="acc">
-                    <option value="Pers acc">Личный кабинет</option>
-                    <option value="guest">Гость</option>
-                </select></p>
-                <p><select name="Валюта" id="val">
-                    <option value="Rub">Рубль
-                    </option>
-                    <option value="USD">USD.</option>
-                </select></p>
-                <p><select name="Lang" id="lang">
-                    <option value="RU">RU</option>
-                    <option value="EN">EN</option>
-                </select></p>
+                <label>
+                    <select class="nav-info__selector" name="Account settings" id="acc">
+                        <option value="Pers acc">Личный кабинет</option>
+                        <option value="guest">Гость</option>
+                    </select>
+                </label>
+                <label>
+                    <select class="nav-info__selector" name="Money settings" id="money">
+                        <option value="Rub">Рубль
+                        </option>
+                        <option value="USD">USD.</option>
+                    </select>
+                </label>
+                <label>
+                    <select class="nav-info__selector" name="language settings" id="lang">
+                        <option value="RU">RU</option>
+                        <option value="EN">EN</option></select>
+                </label>
                 <p class="site__phone-number">8 800 500-61-05</p>
             </div>
         </nav>
@@ -59,7 +64,7 @@
             </label>
         </div>
         <div class="catalog-list">
-            <article class="voyage">
+            <article class="voyage voyage_top">
                 <div class="voyage__picture voyage__picture_large">
                     <img src="images/lighthouse_desktop.jpg" alt="Круиз в анапу" />
                 </div>
@@ -90,7 +95,7 @@
                 </div>
             </article>
             <div class="explorer-divider"></div>
-            <article class="voyage">
+            <article class="voyage voyage_sale">
                 <div class="voyage__picture voyage__picture_small">
                     <img src="images/sochi_large.jpg" alt="Обзорная морская экскурсия" />
                 </div>
@@ -126,7 +131,7 @@
                 </div>
             </article>
             <div class="explorer-divider"></div>
-            <article class="voyage">
+            <article class="voyage voyage_sale">
                 <div class="voyage__picture voyage__picture_small">
                     <img src="images/gelenjick_tablet.jpg" alt="Обзорная морская экскурсия" />
                 </div>

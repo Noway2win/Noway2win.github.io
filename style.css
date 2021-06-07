@@ -19,18 +19,23 @@
 }
 .nav {
     position: absolute;
+
     display: flex;
-    justify-content: space-between;
+
     width: 100%;
+
+    justify-content: space-between;
 }
 .nav__menu-button {
     padding: 0 15px;
 
+    cursor: pointer;
+
     border: none;
     background-color: transparent;
 }
-.nav-info{
-  display: none;
+.nav-info {
+    display: none;
 }
 .advert {
     display: flex;
@@ -82,6 +87,7 @@
     margin-bottom: 5px;
     padding: 16px 49px;
 
+    cursor: pointer;
     text-align: center;
 
     color: #ffffff;
@@ -93,6 +99,11 @@
     font-weight: normal;
     font-style: normal;
     font-stretch: normal;
+}
+.advert__choice-button:hover,
+.advert__choice-button:active,
+.advert__choice-button:focus {
+    background-color: darkblue;
 }
 .catalog {
     display: flex;
@@ -129,6 +140,8 @@
     width: auto;
     max-width: 70px;
 
+    cursor: pointer;
+
     border: none;
     background: transparent;
 
@@ -139,6 +152,8 @@
     flex-direction: column;
 }
 .voyage {
+    position: relative;
+
     display: flex;
     flex-direction: column;
 
@@ -146,7 +161,7 @@
     width: 100%;
     max-width: 290px;
     padding-top: 20px;
-
+    background-size: cover;
     text-align: left;
 
     background: transparent;
@@ -154,6 +169,46 @@
     align-items: center;
     -webkit-box-align: center;
     -ms-flex-align: center;
+}
+.voyage_top::after {
+    position: absolute;
+    z-index: 10;
+    right: 32px;
+
+    width: 89px;
+    height: 101px;
+    padding: 30px 11px 39px 13px;
+
+    content: "ХИТ ПРОДАЖ";
+    text-align: center;
+
+    color: #ffffff;
+    background-color: transparent;
+    background-image: url("./images/top-tag.png");
+
+    font-family: "Raleway", sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+}
+.voyage_sale::after {
+  position: absolute;
+  z-index: 10;
+  right: 32px;
+
+  width: 89px;
+  height: 101px;
+  padding: 30px 11px 39px 13px;
+
+  content: "Акция";
+  text-align: center;
+
+  color: #ffffff;
+  background-color: transparent;
+  background-image: url("./images/sale_tag.png");
+
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  font-weight: 300;
 }
 .voyage__picture {
     position: relative;
@@ -186,6 +241,8 @@
 .voyage__name {
     position: relative;
 
+    display: block;
+
     text-decoration: none;
 
     color: #00a2dd;
@@ -197,10 +254,7 @@
     margin: 0;
     padding: 0;
 }
-.voyage__name::after {
-    position: absolute;
-    right: -15px;
-
+.voyage__name_head::after {
     content: "\2023";
 }
 .voyage__details {
@@ -237,6 +291,7 @@
     margin-bottom: 5px;
     padding: 17px 49px 16px 38px;
 
+    cursor: pointer;
     text-align: center;
 
     color: #ffffff;
@@ -245,6 +300,11 @@
 
     font-family: "Raleway", sans-serif;
     font-size: 14px;
+}
+.catalog__expand-button:hover,
+.catalog__expand-button:active,
+.catalog__expand-button:focus {
+    background-color: darkblue;
 }
 .footer {
     display: flex;
@@ -299,9 +359,26 @@
     .header {
         height: 608px;
     }
-    .nav-info{
-      display: flex;
-      justify-content: space-evenly;
+    .nav-info {
+        display: flex;
+
+        min-width: 50%;
+
+        justify-content: space-evenly;
+    }
+    .nav-info__selector {
+        display: inline-block;
+
+        width: auto;
+
+        cursor: pointer;
+
+        border: none;
+        background: transparent;
+
+        font-family: "Raleway", sans-serif;
+        font-size: 14px;
+        font-style: normal;
     }
     .catalog-list {
         flex-direction: row;
