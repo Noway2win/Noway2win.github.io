@@ -20,6 +20,22 @@
             <button class="nav__menu-button">
                 <img src="./images/menu.png" alt="Кнопка меню" />
             </button>
+            <div class="nav-info">
+                <p><select name="Аккаунт" id="acc">
+                    <option value="Pers acc">Личный кабинет</option>
+                    <option value="guest">Гость</option>
+                </select></p>
+                <p><select name="Валюта" id="val">
+                    <option value="Rub">Рубль
+                    </option>
+                    <option value="USD">USD.</option>
+                </select></p>
+                <p><select name="Lang" id="lang">
+                    <option value="RU">RU</option>
+                    <option value="EN">EN</option>
+                </select></p>
+                <p class="site__phone-number">8 800 500-61-05</p>
+            </div>
         </nav>
         <section class="advert">
             <img src="./images/placeholder.png" alt="Логотип сайта" class="advert__logo" />
@@ -198,15 +214,25 @@
         <button class="catalog__expand-button">Больше круизов</button>
     </main>
     <footer class="footer">
-        <h6 class="footer__title">Будь на связи:</h6>
-        <div class="footer__media">
-            <a class="footer__media-link" href="#"><span class="icon-vk-with-circle"></span></a>
-            <a class="footer__media-link" href="#"><span class="icon-odnoklassniki-square"></span></a>
-            <a class="footer__media-link" href="#"><span class="icon-youtube-with-circle"></span></a>
-            <a class="footer__media-link" href="#"><span class="icon-instagram-with-circle"></span></a>
+        <div class="footer-links">
+            <a href="#" class="footer-links__item">Вход для партнеров</a>
+            <a href="#" class="footer-links__item">О компании</a>
+            <a href="#" class="footer-links__item">Контакты</a>
         </div>
-        <p class="footer__phone-number">8 800 500-61-05</p>
-        <p class="footer__company-title">2016 ООО "Городские круизы"</p>
+        <div class="contact-links">
+            <h6 class="footer__title">Будь на связи:</h6>
+            <div class="footer__media">
+                <a class="footer__media-link" href="#"><span class="icon-vk-with-circle"></span></a>
+                <a class="footer__media-link" href="#"><span class="icon-odnoklassniki-square"></span></a>
+                <a class="footer__media-link" href="#"><span class="icon-youtube-with-circle"></span></a>
+                <a class="footer__media-link" href="#"><span class="icon-instagram-with-circle"></span></a>
+            </div>
+        </div>
+        <div class="contact-info">
+            <p class="site__phone-number">8 800 500-61-05</p>
+            <p class="footer__company-title">2016 ООО "Городские круизы"</p>
+        </div>
+
     </footer>
 </body>
 
