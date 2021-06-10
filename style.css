@@ -1,7 +1,6 @@
 .header {
   position: relative;
 
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   flex-direction: column;
@@ -21,6 +20,7 @@
 }
 .nav {
   position: relative;
+
   display: flex;
 
   width: 100%;
@@ -40,7 +40,6 @@
   display: none;
 }
 .advert {
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   flex-direction: column;
@@ -158,7 +157,6 @@
 .voyage {
   position: relative;
 
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   flex-direction: column;
@@ -250,6 +248,8 @@
 
   display: block;
 
+  padding-bottom: 10px;
+
   text-decoration: none;
 
   color: #00a2dd;
@@ -260,6 +260,12 @@
 .voyage__name_head {
   margin: 0;
   padding: 0;
+
+  color: inherit;
+
+  font-family: inherit;
+  font-size: 1em;
+  font-weight: inherit;
 }
 .voyage__name_head::after {
   content: "\2023";
@@ -573,7 +579,16 @@
 @media all and (min-width: 768px) and (-ms-high-contrast: none),
   (-ms-high-contrast: active) {
   .footer {
-    justify-content: space-between;
     padding: 0 25%;
+
+    justify-content: space-between;
+  }
+  .voyage_sale::after {
+    top: 25px;
+    right: 25px;
+  }
+  .voyage_top::after {
+    top: 25px;
+    right: 25px;
   }
 }
