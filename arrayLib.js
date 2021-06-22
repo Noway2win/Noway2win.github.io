@@ -8,7 +8,9 @@ var arrayLib = (function () {
 			return;
 		}
 
-		returnedObg.array = array;
+		this.array = array;
+
+		returnedObg.array = this.array;
 		return returnedObg;
 	};
 
@@ -144,7 +146,6 @@ var arrayLib = (function () {
 
 	returnedObg.value =
 		function () {
-			console.log(this);
 			return this.array || [];
 		};
 
@@ -233,3 +234,7 @@ console.log(test);
 var test2 = new arrayLib.value();
 
 console.log(test2);
+
+var test3 = new arrayLib.chain([1, 2, 3, 4, 5, 6]).take(5).skip(1).value();
+
+console.log(test3);
