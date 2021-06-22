@@ -1,22 +1,22 @@
 var arrayLib = (function () {
 
+	var returnedObg = this || {};
 
-	function chain(array) {
+	returnedObg.chain = function (array) {
 
 		if (!arrayCheck(array)) {
 			return;
 		}
 
-		this.array = array;
-		return this;
-	}
+		returnedObg.array = array;
+		return returnedObg;
+	};
 
-
-	function takeNArrayVal() {
+	returnedObg.take = function () {
 		var array, n;
 
 		var valuesObject = argumentsCheck(arguments);
-		array = valuesObject.array || this.array;
+		array = valuesObject.array;
 		n = valuesObject.serviceVar;
 
 		if (!arrayCheck(array) || !lengthCheck(array, n)) {
@@ -28,17 +28,16 @@ var arrayLib = (function () {
 		for (var i = 0; i < n; i++) {
 			newArr.push(array[i]);
 		}
-		this.array = newArr;
+		returnedObg.array = newArr;
 
-		return (arguments.length == 1) ? this : newArr;
-	}
+		return (arguments.length == 1) ? returnedObg : newArr;
+	};
 
-
-	function skipNArrayVal() {
+	returnedObg.skip = function () {
 		var array, n;
 
 		var valuesObject = argumentsCheck(arguments);
-		array = valuesObject.array || this.array;
+		array = valuesObject.array;
 		n = valuesObject.serviceVar;
 
 		if (!arrayCheck(array) || !lengthCheck(array, n)) {
@@ -52,17 +51,16 @@ var arrayLib = (function () {
 			newArr.push(array[i]);
 		}
 
-		this.array = newArr;
+		returnedObg.array = newArr;
 
-		return (arguments.length == 1) ? this : newArr;
-	}
+		return (arguments.length == 1) ? returnedObg : newArr;
+	};
 
-
-	function mapArray() {
+	returnedObg.map = function () {
 		var array, callback;
 
 		var valuesObject = argumentsCheck(arguments);
-		array = valuesObject.array || this.array;
+		array = valuesObject.array;
 		callback = valuesObject.serviceVar;
 
 		if (!arrayCheck(array) || !functionCheck(callback)) {
@@ -77,15 +75,14 @@ var arrayLib = (function () {
 			newArr.push(newValue);
 		}
 
-		this.array = newArr;
+		returnedObg.array = newArr;
 
-		return (arguments.length == 1) ? this : newArr;
-	}
+		return (arguments.length == 1) ? returnedObg : newArr;
+	};
 
-
-	function reduceArray() {
+	returnedObg.reduce = function () {
 		var valuesObject = argumentsCheck(arguments);
-		var array = valuesObject.array || this.array,
+		var array = valuesObject.array,
 			callback = valuesObject.serviceVar,
 			initialValue = valuesObject.additionalValue || 0;
 
@@ -99,14 +96,13 @@ var arrayLib = (function () {
 		}
 
 		return initialValue;
-	}
+	};
 
-
-	function filterArray() {
+	returnedObg.filter = function () {
 		var array, callback;
 
 		var valuesObject = argumentsCheck(arguments);
-		array = valuesObject.array || this.array;
+		array = valuesObject.array;
 		callback = valuesObject.serviceVar;
 
 		if (!arrayCheck(array) || !functionCheck(callback)) {
@@ -121,17 +117,17 @@ var arrayLib = (function () {
 			}
 		}
 
-		this.array = newArr;
+		returnedObg.array = newArr;
 
-		return (arguments.length == 1) ? this : newArr;
-	}
+		return (arguments.length == 1) ? returnedObg : newArr;
+	};
 
 
-	function arrayForEach() {
+	returnedObg.forEach = function () {
 		var array, callback;
 
 		var valuesObject = argumentsCheck(arguments);
-		array = valuesObject.array || this.array;
+		array = valuesObject.array;
 		callback = valuesObject.serviceVar;
 
 		if (!arrayCheck(array) || !functionCheck(callback)) {
@@ -143,14 +139,13 @@ var arrayLib = (function () {
 			callback(array[i]);
 		}
 
-		return (arguments.length == 1) ? this : null;
-	}
+		return (arguments.length == 1) ? returnedObg : null;
+	};
 
-
-	function value() {
-		return this.array || [];
-	}
-
+	returnedObg.value =
+		function () {
+			return returnedObg.array || [];
+		};
 
 	function arrayCheck(array) {
 		if (array.constructor != Array || array.length == 0) {
@@ -179,6 +174,7 @@ var arrayLib = (function () {
 
 		switch (args.length) {
 			case 1: serviceVar = args[0];
+				array = returnedObg.array;
 				break;
 			case 2:
 				array = args[0];
@@ -203,45 +199,36 @@ var arrayLib = (function () {
 
 	}
 
-	return {
-		chain: chain,
-		take: takeNArrayVal,
-		skip: skipNArrayVal,
-		map: mapArray,
-		reduce: reduceArray,
-		filter: filterArray,
-		forEach: arrayForEach,
-		value: value
-	};
+	return returnedObg;
 })();
 
 
-// console.log(arrayLib.take([1, 2, 3, 4, 5, 6], 5));
+console.log(arrayLib.take([1, 2, 3, 4, 5, 6], 5));
 
 console.log(arrayLib.chain([1, 2, 3, 4, 5, 6]).take(5).skip(1).map(a => a * 2).filter(a => a > 3).forEach(a => { console.log(a); }));
 
-// console.log(arrayLib.chain([1, 2, 3, 4, 5, 6]).take(5).skip(1).map(a => a * 2).filter(a => a > 3).value());
+console.log(arrayLib.chain([1, 2, 3, 4, 5, 6]).take(5).skip(1).map(a => a * 2).filter(a => a > 3).value());
 
-// console.log(arrayLib.skip([1, 2, 3, 4, 5, 6], 5));
+console.log(arrayLib.skip([1, 2, 3, 4, 5, 6], 5));
 
-// console.log(arrayLib.map([1, 2, 3, 4, 5, 6], a => a * 2));
+console.log(arrayLib.map([1, 2, 3, 4, 5, 6], a => a * 2));
 
-// console.log(arrayLib.chain([1, 2, 3, 4, 5, 6]).take(5).skip(1).reduce((a, b) => a + b));
+console.log(arrayLib.chain([1, 2, 3, 4, 5, 6]).take(5).skip(1).reduce((a, b) => a + b));
 
-// console.log(arrayLib.reduce([1, 2, 3, 4, 5, 6], (a, b) => a + b));
+console.log(arrayLib.reduce([1, 2, 3, 4, 5, 6], (a, b) => a + b));
 
-// console.log(arrayLib.reduce([1, 2, 3, 4, 5, 6], (a, b) => a + b, 5));
+console.log(arrayLib.reduce([1, 2, 3, 4, 5, 6], (a, b) => a + b, 5));
 
-// console.log(arrayLib.reduce([1, 2, 3, 4, 5, 6], 55));
+console.log(arrayLib.reduce([1, 2, 3, 4, 5, 6], 55));
 
-// console.log(arrayLib.filter([1, 2, 3, 4, 5, 6], a => a > 3));
+console.log(arrayLib.filter([1, 2, 3, 4, 5, 6], a => a > 3));
 
 console.log(arrayLib.forEach([1, 2, 3, 4, 5, 6], a => { console.log(a); }));
 
-// var test = arrayLib.chain([1, 2, 3, 4, 5, 6]).take(5).skip(1).map(a => a * 2).filter(a => a > 3).value();
+var test = arrayLib.chain([1, 2, 3, 4, 5, 6]).take(5).skip(1).map(a => a * 2).filter(a => a > 3).value();
 
-// console.log(test);
+console.log(test);
 
-// var test2 = new arrayLib.value();
+var test2 = new arrayLib.value();
 
-// console.log(test2);
+console.log(test2);
