@@ -144,7 +144,8 @@ var arrayLib = (function () {
 
 	returnedObg.value =
 		function () {
-			return returnedObg.array || [];
+			console.log(this);
+			return this.array || [];
 		};
 
 	function arrayCheck(array) {
