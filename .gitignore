@@ -1,2 +1,5 @@
 
 workspace.code-workspace
+.jshintrc
+test.html
+arrayLibClass.js
