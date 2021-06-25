@@ -2,4 +2,4 @@
 workspace.code-workspace
 .jshintrc
 test.html
-arrayLibPrototype.js
+arrayLibClass.js
