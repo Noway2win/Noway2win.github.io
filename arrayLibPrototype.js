@@ -1,61 +1,4 @@
 function myArrayLib() {
-
-	this.thisDetector = function () {
-		console.log(this);
-	};
-
-	this.arrayCheck = function arrayCheck(array) {
-		if (array.constructor != Array || array.length == 0) {
-			return false;
-		}
-		return true;
-	};
-
-	this.functionCheck = function functionCheck(func) {
-		if (func.constructor != Function) {
-			return false;
-		}
-		return true;
-	};
-
-	this.argumentsCheck = function argumentsCheck(args) {
-
-		var array, serviceVar, additionalValue;
-
-		switch (args.length) {
-			case 1: serviceVar = args[0];
-				array = this.array;
-				break;
-			case 2:
-				array = args[0];
-				serviceVar = args[1];
-				break;
-			case 3: array = args[0];
-				serviceVar = args[1];
-				additionalValue = args[2];
-				break;
-			default: array = [];
-				serviceVar = 0;
-				additionalValue = 0;
-				break;
-		}
-
-
-		return {
-			array: array,
-			serviceVar: serviceVar,
-			additionalValue: additionalValue
-		};
-
-	};
-
-	this.lengthCheck = function lengthCheck(array, n) {
-		if (array.length != undefined && n > array.length) {
-			return false;
-		}
-		return true;
-	};
-
 	return this;
 }
 
@@ -205,6 +148,58 @@ myArrayLib.prototype = {
 
 	value: function () {
 		return this.array || [];
+	},
+
+	arrayCheck: function arrayCheck(array) {
+		if (array.constructor != Array || array.length == 0) {
+			return false;
+		}
+		return true;
+	},
+
+	functionCheck: function functionCheck(func) {
+		if (func.constructor != Function) {
+			return false;
+		}
+		return true;
+	},
+
+	argumentsCheck: function argumentsCheck(args) {
+
+		var array, serviceVar, additionalValue;
+
+		switch (args.length) {
+			case 1: serviceVar = args[0];
+				array = this.array;
+				break;
+			case 2:
+				array = args[0];
+				serviceVar = args[1];
+				break;
+			case 3: array = args[0];
+				serviceVar = args[1];
+				additionalValue = args[2];
+				break;
+			default: array = [];
+				serviceVar = 0;
+				additionalValue = 0;
+				break;
+		}
+
+
+		return {
+			array: array,
+			serviceVar: serviceVar,
+			additionalValue: additionalValue
+		};
+
+	},
+
+	lengthCheck: function lengthCheck(array, n) {
+		if (array.length != undefined && n > array.length) {
+			return false;
+		}
+		return true;
 	}
 };
 
@@ -234,8 +229,6 @@ console.log(arrayLib.reduce([1, 2, 3, 4, 5, 6], 55));
 console.log(arrayLib.filter([1, 2, 3, 4, 5, 6], a => a > 3));
 
 console.log(arrayLib.forEach([1, 2, 3, 4, 5, 6], a => { console.log(a); }));
-
-console.log(arrayLib.thisDetector());
 
 var test = arrayLib.chain([1, 2, 3, 4, 5, 6]).take(5).skip(1).map(a => a * 2).filter(a => a > 3).value();
 
