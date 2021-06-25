@@ -16,11 +16,10 @@ function arrayLib() {
 	};
 
 	returnedObg.take = function () {
-		var array, n;
 
 		var valuesObject = argumentsCheck(arguments);
-		array = valuesObject.array;
-		n = valuesObject.serviceVar;
+		var array = valuesObject.array,
+			n = valuesObject.serviceVar;
 
 		if (!arrayCheck(array) || !lengthCheck(array, n)) {
 			console.log('error');
@@ -37,11 +36,10 @@ function arrayLib() {
 	};
 
 	returnedObg.skip = function () {
-		var array, n;
 
 		var valuesObject = argumentsCheck(arguments);
-		array = valuesObject.array;
-		n = valuesObject.serviceVar;
+		var array = valuesObject.array,
+			n = valuesObject.serviceVar;
 
 		if (!arrayCheck(array) || !lengthCheck(array, n)) {
 			console.log('error');
@@ -60,11 +58,10 @@ function arrayLib() {
 	};
 
 	returnedObg.map = function () {
-		var array, callback;
 
 		var valuesObject = argumentsCheck(arguments);
-		array = valuesObject.array;
-		callback = valuesObject.serviceVar;
+		var array = valuesObject.array,
+			callback = valuesObject.serviceVar;
 
 		if (!arrayCheck(array) || !functionCheck(callback)) {
 			console.log('error');
@@ -102,11 +99,10 @@ function arrayLib() {
 	};
 
 	returnedObg.filter = function () {
-		var array, callback;
 
 		var valuesObject = argumentsCheck(arguments);
-		array = valuesObject.array;
-		callback = valuesObject.serviceVar;
+		var array = valuesObject.array,
+			callback = valuesObject.serviceVar;
 
 		if (!arrayCheck(array) || !functionCheck(callback)) {
 			console.log('error');
@@ -127,11 +123,10 @@ function arrayLib() {
 
 
 	returnedObg.forEach = function () {
-		var array, callback;
 
 		var valuesObject = argumentsCheck(arguments);
-		array = valuesObject.array;
-		callback = valuesObject.serviceVar;
+		var array = valuesObject.array,
+			callback = valuesObject.serviceVar;
 
 		if (!arrayCheck(array) || !functionCheck(callback)) {
 			console.log('error');
