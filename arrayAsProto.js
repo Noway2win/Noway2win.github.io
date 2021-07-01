@@ -14,6 +14,7 @@ MyArray.prototype = Object.create(Array.prototype, {
 				newValue *= 2;
 				this[val] = newValue;
 			}
+			return this;
 		}
 	}
 });
@@ -22,7 +23,7 @@ var array = new MyArray(1, 2, 3);
 
 var secondArray = new MyArray('a', 'b', 'c', 5);
 
-secondArray.push(5);
+secondArray.increaseByTwo().push(5);
 
 var mapAndChainingCheck = array.map(a => a * 2).filter(a => a > 2);
 
