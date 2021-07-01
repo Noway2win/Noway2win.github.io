@@ -7,7 +7,7 @@ function MyArray() {
 }
 
 MyArray.prototype = Object.create(Array.prototype, {
-	increaseByTwo: {
+	multiplyByTwo: {
 		value: function () {
 			for (var val = 0; val < this.length; val++) {
 				var newValue = this[val];
