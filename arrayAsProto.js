@@ -1,5 +1,5 @@
 function MyArray() {
-	var array = Array.apply(this, arguments);
+	var array = Array.apply({}, arguments);
 	for (var num in array) {
 		this[num] = array[num];
 		this.length += 1;
