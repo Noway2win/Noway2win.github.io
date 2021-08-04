@@ -34,13 +34,14 @@ let todoList = {
 
 todoList.addItem('task 1').addItem('task 2').addItem('task 3').crossOutItem(0);
 
-let iterableTodoList = Object.assign({
+let iterableTodoList = {
 	*[Symbol.iterator]() {
 		for (let value = 0; value <= this.todoItems.length - 1; value++) {
 			yield this.todoItems[value];
 		}
-	}
-}, todoList);
+	},
+	...todoList
+};
 
 for (let item of iterableTodoList) {
 	console.log(item);
