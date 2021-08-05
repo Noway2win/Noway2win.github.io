@@ -72,9 +72,9 @@ class Mime extends Person {
 const newCustomer = new Customer('Dzmitry');
 const newEmployee = new Employee('Sergey', 'Manager');
 const newMime = new Mime('Anton');
-console.log(newCustomer);
-console.log(newEmployee);
-console.log(newMime);
+// console.log(newCustomer);
+// console.log(newEmployee);
+// console.log(newMime);
 
 // Exercise 4.2 CALCULATOR//
 
@@ -84,7 +84,8 @@ class Calculator {
 	}
 	_addingToHistory(val) {
 		if (this._history.length >= 10) {
-			this._history.slice(1).push(val);
+			this._history = this._history.slice(1);
+			this._history.push(val);
 		}
 		else {
 			this._history.push(val);
@@ -111,7 +112,8 @@ class Calculator {
 		return result;
 	}
 	cancel() {
-		return this._history.pop();
+		this._history.pop();
+		return this._history[this._history.length - 1];
 	}
 	get AllResults() {
 		if (this._history.length == 0) {
@@ -122,7 +124,7 @@ class Calculator {
 }
 
 let calc = new Calculator();
-console.log(calc.add(2, 3));
+calc.add(2, 3);
 calc.multiply(2, 3);
 calc.substract(10, 5);
 calc.divide(14, 7);
