@@ -79,47 +79,48 @@ const newMime = new Mime('Anton');
 // Exercise 4.2 CALCULATOR//
 
 class Calculator {
+	#history;
 	constructor() {
-		this._history = [];
+		this.#history = [];
 	}
-	_addingToHistory(val) {
-		if (this._history.length >= 10) {
-			this._history = this._history.slice(1);
-			this._history.push(val);
+	#addingToHistory(val) {
+		if (this.#history.length >= 10) {
+			this.#history = this.#history.slice(1);
+			this.#history.push(val);
 		}
 		else {
-			this._history.push(val);
+			this.#history.push(val);
 		}
 	}
 	add(a, b) {
 		let result = a + b;
-		this._addingToHistory(result);
+		this.#addingToHistory(result);
 		return result;
 	}
 	substract(a, b) {
 		let result = a - b;
-		this._addingToHistory(result);
+		this.#addingToHistory(result);
 		return result;
 	}
 	multiply(a, b) {
 		let result = a * b;
-		this._addingToHistory(result);
+		this.#addingToHistory(result);
 		return result;
 	}
 	divide(a, b) {
 		let result = a / b;
-		this._addingToHistory(result);
+		this.#addingToHistory(result);
 		return result;
 	}
 	cancel() {
-		this._history.pop();
-		return this._history[this._history.length - 1];
+		this.#history.pop();
+		return this.#history[this.#history.length - 1];
 	}
 	get AllResults() {
-		if (this._history.length == 0) {
+		if (this.#history.length == 0) {
 			return 'No results yet';
 		}
-		return this._history.toString();
+		return this.#history.toString();
 	}
 }
 
@@ -137,6 +138,7 @@ calc.add(2, 66);
 calc.add(2, 0);
 calc.add(2, 3);
 calc.add(1, 7);
+calc.cancel();
 calc.cancel();
 calc.cancel();
 console.log(calc.AllResults);
