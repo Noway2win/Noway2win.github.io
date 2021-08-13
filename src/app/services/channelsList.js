@@ -1,22 +1,18 @@
-export class ChannelsList {
-	constructor() {
-		this.parentNode = document.querySelector('.channels-list');
-		this.item = document.createElement('div');
-		this.name = document.createElement('h4');
-		this.button = document.createElement('button');
+export function addChannelToList(channelName) {
+	const root = document.querySelector('.channels-list');
+	const listItemDiv = document.createElement('div');
+	const listItemName = document.createElement('h4');
+	const listItemDelBtn = document.createElement('button');
+	listItemDiv.append(listItemName);
+	listItemDiv.append(listItemDelBtn);
+	listItemDiv.classList.add('channels-list-item');
+	listItemName.classList.add('channels-list-item_name');
+	listItemDelBtn.classList.add('channels-list-item_delete-button');
+	listItemName.innerText = channelName;
+	listItemDelBtn.innerText = '🗑️';
+	root.prepend(listItemDiv);
+	listItemDelBtn.addEventListener('click', function () {
+		this.parentNode.remove();
 	}
-	create(name) {
-		console.log(this);
-		this.item.append(this.name);
-		this.item.append(this.button);
-		this.parentNode.append(this.item);
-		this.item.classList.add('channels-list-item');
-		this.name.classList.add('channels-list-item_name');
-		this.button.classList.add('channels-list-item_delete-button');
-		this.name.innerText = name;
-		this.button.innerText = '🗑️';
-		this.button.addEventListener('click', () => {
-			this.item.remove();
-		})
-	}
+	)
 }

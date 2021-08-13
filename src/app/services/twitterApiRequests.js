@@ -1,33 +1,53 @@
-// export function requestToWeb(token) {
-// 	let twitterRequest = new XMLHttpRequest();
-// 	twitterRequest.open('GET', 'https://cors-anywhere.herokuapp.com/https://api.twitter.com/2/tweets?ids=1263150595717730305');
-// 	twitterRequest.setRequestHeader('Authorization', `Bearer ${token}`);
-// 	twitterRequest.send();
-// 	twitterRequest.onload = function () {
-// 		if (twitterRequest.status != 200) {
-// 			alert(`Error ${twitterRequest.status}: ${twitterRequest.statusText}`);
-// 		} else {
-// 			console.log(twitterRequest.response);
-// 		}
-// 	}
-// }
-
-export class TwitterApiDialog {
-	constructor(url) {
-		this.url = url
-	}
-	requestToWeb(token, searchParams) {
-		const twitterRequest = new XMLHttpRequest();
-		twitterRequest.open('GET', `https://cors-anywhere.herokuapp.com/https://api.twitter.com/${this.url}?screen_name=${searchParams}`);
+export function getChannels(token, searchParams) {
+	return new Promise((resolve, reject) => {
+		let twitterRequest = new XMLHttpRequest();
+		twitterRequest.open('GET', `https://cors-anywhere.herokuapp.com/https://api.twitter.com/1.1/users/lookup.json?screen_name=${searchParams}`);
 		twitterRequest.setRequestHeader('Authorization', `Bearer ${token}`);
 		twitterRequest.send();
 		twitterRequest.onload = function () {
 			if (twitterRequest.status != 200) {
-				alert(`Error ${twitterRequest.status}: ${twitterRequest.statusText}`);
+				reject({
+					code: twitterRequest.status,
+					status: twitterRequest.statusText
+				});
 			} else {
-				console.log(JSON.parse(twitterRequest.response));
+				const res = JSON.parse(twitterRequest.responseText);
+				resolve(res);
 			}
 		}
+		twitterRequest.onerror = function () {
+			reject({
+				code: twitterRequest.status,
+				status: twitterRequest.statusText
+			});
+		}
 	}
+	)
+}
+
+export function getTweets(token, channelName) {
+	return new Promise((resolve, reject) => {
+		let twitterRequest = new XMLHttpRequest();
+		twitterRequest.open('GET', `https://api.twitter.com/1.1/search/tweets.json?q=%40${channelName}`);
+		twitterRequest.setRequestHeader('Authorization', `Bearer ${token}`);
+		twitterRequest.send();
+		twitterRequest.onload = function () {
+			if (twitterRequest.status != 200) {
+				reject({
+					code: twitterRequest.status,
+					status: twitterRequest.statusText
+				});
+			} else {
+				const res = JSON.parse(twitterRequest.responseText);
+				resolve(res);
+			}
+		}
+		twitterRequest.onerror = function () {
+			reject({
+				code: twitterRequest.status,
+				status: twitterRequest.statusText
+			});
+		}
+	})
 }
 
