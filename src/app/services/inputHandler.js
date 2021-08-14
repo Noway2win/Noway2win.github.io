@@ -1,6 +1,8 @@
 import { bearerToken } from '../keys/twitterKeys';
 import { getChannels, getTweets } from './twitterApiRequests';
 import { addChannelToList } from './channelsList';
+import { getChannelsOAuth1 } from './search';
+
 
 export function inputHandler(formSelector, inputSelector) {
 	const form = document.querySelector(formSelector);
@@ -8,7 +10,8 @@ export function inputHandler(formSelector, inputSelector) {
 	form.addEventListener('submit', async (e) => {
 		e.preventDefault();
 		try {
-			const gettedChannel = await getChannels(bearerToken, input.value);
+			const gettedChannel = await getChannelsOAuth1();
+			// const gettedChannel = await getChannels(bearerToken, input.value);
 			console.log(gettedChannel);
 			addChannelToList(gettedChannel[0].screen_name);
 		}
