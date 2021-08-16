@@ -12,8 +12,8 @@ export function inputHandler(formSelector, inputSelector) {
 		try {
 			// const gettedChannel = await getChannelsOAuth1();
 			const channelObject = await getChannel(bearerToken, input.value);
-			const tweetsArray = await getTweets(bearerToken, input.value);
-			addChannelToList(channelObject, tweetsArray);
+			const channelTweetsArray = await getTweets(bearerToken, input.value);
+			addChannelToList(channelObject, channelTweetsArray);
 		}
 		catch (err) {
 			console.log(err);
@@ -21,6 +21,5 @@ export function inputHandler(formSelector, inputSelector) {
 		finally {
 			input.value = '';
 		}
-		// addChannelToList()
 	});
 }
