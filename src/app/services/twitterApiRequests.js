@@ -1,4 +1,4 @@
-export function getChannels(token, searchParams) {
+export function getChannel(token, searchParams) {
 	return new Promise((resolve, reject) => {
 		let twitterRequest = new XMLHttpRequest();
 		// twitterRequest.open('GET', `https://cors-anywhere.herokuapp.com/https://api.twitter.com/1.1/users/lookup.json?screen_name=${searchParams}&user.fields=description,name,profile_image_url,followers_count,statuses_count`);
