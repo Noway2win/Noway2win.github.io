@@ -5,7 +5,7 @@ export function getChannelsOAuth1(token, searchParams) {
 	return new Promise((resolve, reject) => {
 		const reqNonce = nonce(32);
 		const reqTimestamp = Math.floor(Date.now() / 1000);
-		const reqSignature = oauthSignature.generate('GET', 'https://api.twitter.com/1.1/users/search.json?q=soccer',
+		const reqSignature = oauthSignature.generate('GET', 'https://cors-anywhere.herokuapp.com/https://api.twitter.com/1.1/users/search.json?q=soccer',
 			{
 				oauth_consumer_key: 'SVabVXQqOkzartJLxMVe694Dl',
 				oauth_token: '1425835781604593666-rkOaHb8xshpFzdXk5ZQAZeWf7nSc7S',
@@ -18,8 +18,8 @@ export function getChannelsOAuth1(token, searchParams) {
 			'a9TRMBBmMFtnfBd3ONwD8g7yjcGP7PFQtDaY8y0EzcCz7')
 
 		let twitterRequest = new XMLHttpRequest();
-		twitterRequest.open('GET', `https://api.twitter.com/1.1/users/search.json?q=soccer`);
-		twitterRequest.setRequestHeader('Authorization', `OAuth oauth_consumer_key="SVabVXQqOkzartJLxMVe694Dl",oauth_nonce="${reqNonce}",oauth_signature="${reqSignature}",oauth_signature_method="HMAC-SHA1",oauth_timestamp="${reqTimestamp}",oauth_token="1425835781604593666-rkOaHb8xshpFzdXk5ZQAZeWf7nSc7S",oauth_version="1.0"`)
+		twitterRequest.open('GET', `https://cors-anywhere.herokuapp.com/https://api.twitter.com/1.1/users/search.json?q=soccer`);
+		twitterRequest.setRequestHeader('Authorization', `OAuth oauth_consumer_key="SVabVXQqOkzartJLxMVe694Dl",oauth_nonce="${reqNonce}",oauth_signature_method="HMAC-SHA1",oauth_timestamp="${reqTimestamp}",oauth_token="1425835781604593666-rkOaHb8xshpFzdXk5ZQAZeWf7nSc7S",oauth_version="1.0",oauth_signature="${reqSignature}"`)
 		twitterRequest.send();
 		twitterRequest.onload = function () {
 			if (twitterRequest.status != 200) {

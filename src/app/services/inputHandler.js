@@ -1,7 +1,7 @@
 import { bearerToken } from '../keys/twitterKeys';
 import { getChannel, getTweets } from './twitterApiRequests';
 import { addChannelToList } from './channelsList';
-// import { getChannelsOAuth1 } from './search';
+import { getChannelsOAuth1 } from './search';
 
 
 export function inputHandler(formSelector, inputSelector) {
