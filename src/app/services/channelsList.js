@@ -57,16 +57,7 @@ function addTweets(tweetsArray) {
 	appendElemsTo(tweetsSection, closeTweetsBtn);
 
 	tweetsArray.forEach(tweet => {
-		const tweetDiv = createElement({ selector: 'div', elemClasses: ['tweets-list-item'] });
-		const tweetText = createElement({ selector: 'p', elemClasses: ['tweets-list-item_text'], innerText: tweet.text });
-
-		tweetDiv.append(tweetText);
-
-		if ('imgUrl' in tweet) {
-			const tweetImg = createElement({ selector: 'img', elemClasses: ['tweets-list-item_img'], src: tweet.imgUrl });
-			tweetDiv.append(tweetImg);
-		}
-
+		const tweetDiv = createTweet(tweet);
 		tweetsSection.append(tweetDiv);
 	})
 
@@ -92,4 +83,19 @@ function appendElemsTo(parent, ...elems) {
 	elems.forEach(elem => {
 		parent.append(elem);
 	})
+}
+
+function createTweet(tweet) {
+	const tweetDiv = createElement({ selector: 'div', elemClasses: ['tweets-list-item'] });
+	const tweetText = createElement({ selector: 'p', elemClasses: ['tweets-list-item_text'], innerText: tweet.text });
+
+	tweetDiv.append(tweetText);
+
+	if ('imgUrl' in tweet) {
+		const tweetImg = createElement({ selector: 'img', elemClasses: ['tweets-list-item_img'], src: tweet.imgUrl });
+		tweetDiv.append(tweetImg);
+	}
+
+	return tweetDiv;
+
 }

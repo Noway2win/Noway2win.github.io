@@ -7,19 +7,23 @@ import { addChannelToList } from './channelsList';
 export function inputHandler(formSelector, inputSelector) {
 	const form = document.querySelector(formSelector);
 	const input = document.querySelector(inputSelector);
-	form.addEventListener('submit', async (e) => {
+	form.addEventListener('submit', (e) => {
 		e.preventDefault();
-		try {
-			// const gettedChannel = await getChannelsOAuth1();
-			const channelObject = await getChannel(bearerToken, input.value);
-			const channelTweetsArray = await getTweets(bearerToken, input.value);
-			addChannelToList(channelObject, channelTweetsArray);
-		}
-		catch (err) {
-			console.log(err);
-		}
-		finally {
-			input.value = '';
-		}
+		processData(bearerToken, input);
 	});
+}
+
+async function processData(token, source) {
+	try {
+		// const gettedChannel = await getChannelsOAuth1();
+		const channelObject = await getChannel(token, source.value);
+		const channelTweetsArray = await getTweets(token, source.value);
+		addChannelToList(channelObject, channelTweetsArray);
+	}
+	catch (err) {
+		console.log(err);
+	}
+	finally {
+		source.value = '';
+	}
 }
