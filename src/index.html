@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TwitterApp</title>
+  </head>
+  <body>
+    <header class="header"><h1>Twitter Channels</h1></header>
+    <main>
+      <section class="search-pannel">
+        <h3 class="search-pannel__name">Enter the name of channel</h3>
+        <form action="#" class="search-pannel__form">
+          <input
+            type="search"
+            name="search-input"
+            id="search-pannel__form__input"
+          />
+          <button type="submit">Search</button>
+        </form>
+      </section>
+      <section class="channels-list">
+        <div class="channels-list-item">
+          <div class="channels-list-item_short">
+            <img class="channels-list-item_short__image" src="#" alt="pict" />
+            <h4 class="channels-list-item_name">twitter Acc</h4>
+            <button class="channels-list-item_delete-button">🗑️</button>
+          </div>
+          <section class="channels-list-item_detailed">
+            <p class="channels-list-item_detailed__info-p">Description:</p>
+            <p class="channels-list-item_detailed__info-p">Number of tweets:</p>
+            <p class="channels-list-item_detailed__info-p">
+              Number of followers:
+            </p>
+          </section>
+          <section class="tweets-list hidden">
+            <div class="tweets-list-item">
+              <p class="tweets-list-item_text"></p>
+              <img src="" alt="" class="tweets-list-item_img" />
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
