@@ -1,7 +1,6 @@
 import { bearerToken } from '../keys/twitterKeys';
 import { getChannel, getTweets } from './twitterApiRequests';
 import { addChannelToList } from './channelsList';
-// import { getChannelsOAuth1 } from './search';
 
 
 export function inputHandler(formSelector, inputSelector) {
@@ -15,7 +14,6 @@ export function inputHandler(formSelector, inputSelector) {
 
 async function processData(token, source) {
 	try {
-		// const gettedChannel = await getChannelsOAuth1();
 		const channelObject = await getChannel(token, source.value);
 		const channelTweetsArray = await getTweets(token, source.value);
 		addChannelToList(channelObject, channelTweetsArray);
