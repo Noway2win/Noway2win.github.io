@@ -1,66 +1,32 @@
-export function getChannel(token, searchParam) {
-	return new Promise((resolve, reject) => {
-		const twitterData = sendGetRequest('channel', searchParam, token);
-
-		twitterData.onload = function () {
-			testResponse(twitterData, (response) => {
-				const channelData = JSON.parse(response.responseText).data[0];
-				resolve(channelData);
-			})
-		}
-
-		twitterData.onerror = function () {
-			reject({
-				code: twitterData.status,
-				status: twitterData.statusText
-			});
-		}
-	}
-	)
+export async function getChannel(token, searchParam) {
+	const responseData = await sendGetRequest('channel', searchParam, token);
+	const channelData = responseData.data[0];
+	return channelData;
+}
+export async function getTweets(token, channelName) {
+	const tweetsData = await sendGetRequest('tweets', channelName, token);
+	const tweetsArray = handlerForTweetsData(tweetsData.data, tweetsData?.includes?.media);
+	return tweetsArray;
 }
 
-export function getTweets(token, channelName) {
-	return new Promise((resolve, reject) => {
-		const twitterData = sendGetRequest('tweets', channelName, token);
-
-		twitterData.onload = function () {
-			testResponse(twitterData, (response) => {
-				const tweetsData = JSON.parse(response.responseText);
-				const tweetsArray = handlerForTweetsData(tweetsData.data, tweetsData?.includes?.media);
-				resolve(tweetsArray);
-			})
-		}
-
-		twitterData.onerror = function () {
-			reject({
-				code: twitterData.status,
-				status: twitterData.statusText
-			});
-		}
-	})
-}
-
-function sendGetRequest(typeOfData, searchParam, token) {
+async function sendGetRequest(typeOfData, searchParam, token) {
 	let url;
 	switch (typeOfData) {
 		case 'tweets': url = `https://cors-anywhere.herokuapp.com/https://api.twitter.com/2/tweets/search/recent?query=from:${searchParam}&expansions=attachments.media_keys&media.fields=url`; break;
 		case 'channel': url = `https://cors-anywhere.herokuapp.com/https://api.twitter.com/2/users/by?usernames=${searchParam}&user.fields=description,name,profile_image_url,username,public_metrics`; break;
 	}
-	let getRequest = new XMLHttpRequest();
-	getRequest.open('GET', url);
-	getRequest.setRequestHeader('Authorization', `Bearer ${token}`);
-	getRequest.send();
-	return getRequest;
-}
-
-function testResponse(response, callback) {
-	if (response.status != 200) {
-		reject({
-			code: response.status,
-			status: response.statusText
-		})
-	} else {
-		callback(response);
+	let response = await fetch(url, {
+		method: 'GET',
+		headers: {
+			'Authorization': `Bearer ${token}`
+		}
+	})
+	if (response.ok) {
+		let data = await response.json();
+		return data;
+	}
+	else {
+		throw new Error(`status: ${response.status}, statusText: ${response.statusText}`);
 	}
 }
 

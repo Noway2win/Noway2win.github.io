@@ -1,5 +1,5 @@
 import { bearerToken } from '../keys/twitterKeys';
-import { getChannel, getTweets } from './twitterApiRequests';
+import { getTweets, getChannel } from './twitterApiRequests';
 import { addChannelToList } from './channelsList';
 
 
@@ -19,7 +19,7 @@ async function processData(token, source) {
 		addChannelToList(channelObject, channelTweetsArray);
 	}
 	catch (err) {
-		console.log(err);
+		alert(err);
 	}
 	finally {
 		source.value = '';
