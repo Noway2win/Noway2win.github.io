@@ -1,12 +1,13 @@
+import $ from 'jquery';
 import { bearerToken } from '../keys/twitterKeys';
-import { getChannel, getTweets } from './twitterApiRequests';
+import { getTweets, getChannel } from './twitterApiRequests';
 import { addChannelToList } from './channelsList';
 
 
 export function inputHandler(formSelector, inputSelector) {
-	const form = document.querySelector(formSelector);
-	const input = document.querySelector(inputSelector);
-	form.addEventListener('submit', (e) => {
+	const form = $(formSelector);
+	const input = $(inputSelector);
+	form.on('submit', (e) => {
 		e.preventDefault();
 		processData(bearerToken, input);
 	});
@@ -14,14 +15,14 @@ export function inputHandler(formSelector, inputSelector) {
 
 async function processData(token, source) {
 	try {
-		const channelObject = await getChannel(token, source.value);
-		const channelTweetsArray = await getTweets(token, source.value);
+		const channelObject = await getChannel(token, source.val());
+		const channelTweetsArray = await getTweets(token, source.val());
 		addChannelToList(channelObject, channelTweetsArray);
 	}
 	catch (err) {
-		console.log(err);
+		alert(err);
 	}
 	finally {
-		source.value = '';
+		source.val('');
 	}
 }
