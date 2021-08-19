@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"name": "Noway2win.github.io",
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Noway2win.github.io",
+		"liveServer.settings.port": 5501,
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.codeActionsOnSave":{
+			"source.fixAll.eslint": true
+		  },
+		  "editor.formatOnSave": true,
+		  "eslint.validate": ["javascript"]
+	}
+}
