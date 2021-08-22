@@ -1,0 +1,23 @@
+{
+	"name": "noway2win.github.io",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "jest --watch"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Noway2win/Noway2win.github.io.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Noway2win/Noway2win.github.io/issues"
+	},
+	"homepage": "https://github.com/Noway2win/Noway2win.github.io#readme",
+	"dependencies": {
+		"jest": "^27.0.6",
+		"puppeteer": "^10.2.0"
+	}
+}
