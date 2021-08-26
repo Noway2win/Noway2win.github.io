@@ -1,0 +1,11 @@
+{
+	"singleQuote": true,
+	"arrowParens": "always",
+	"max-len": [
+		"error",
+		140,
+		2
+	],
+	"useTabs": true,
+	"endOfLine": "auto"
+}

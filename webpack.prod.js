@@ -1,10 +1,10 @@
 const path = require('path')
 const { merge } = require('webpack-merge')
-const config = require('./webpack.config.js')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin")
+const config = require('./webpack.config')
 
 module.exports = merge(config, {
 	mode: 'production',
@@ -27,8 +27,18 @@ module.exports = merge(config, {
 			{
 				test: /\.css$/,
 				use: [MiniCssExtractPlugin.loader, 'css-loader'],
-			}
+			},
+			{
+				test: /\.m?js|jsx$/,
+				exclude: /node_modules/,
+				use: {
+					loader: "babel-loader",
+				}
+			},
 		]
+	},
+	resolve: {
+		extensions: ['*', '.js', '.jsx'],
 	},
 	optimization: {
 		minimizer: [
