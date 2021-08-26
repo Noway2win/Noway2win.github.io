@@ -11,7 +11,7 @@ module.exports = merge(config, {
 		contentBase: path.resolve(__dirname, './dist'),
 		open: true,
 		compress: false,
-		port: 8080,
+		port: 8097,
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
