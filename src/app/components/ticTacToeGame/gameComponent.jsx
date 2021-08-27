@@ -1,7 +1,7 @@
 import React from 'react';
 import StepsList from './listOfMovesComponent';
 import Board from './boardComponent';
-import calculateWinner from '../services/calculateWinner';
+import calculateWinner from '../../../services/calculateWinner';
 
 export default class Game extends React.Component {
 	constructor(props) {
