@@ -1,5 +1,5 @@
 #progressInput {
-	width: 30%;
+	width: 300px;
 	margin: 20px auto;
 }
 
@@ -9,7 +9,7 @@
 }
 
 .circle-background {
-	stroke: #dddddd;
+	stroke: #570303;
 }
 
 .circle-progress {
@@ -21,6 +21,5 @@
 .circle-text {
 	font-size: 3em;
 	font-weight: bold;
-
-	/* fill: red; */
+	text-anchor: middle;
 }

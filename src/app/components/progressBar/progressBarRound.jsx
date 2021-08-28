@@ -22,20 +22,13 @@ export default function ProgressBarRound(props) {
 				cy={sqSize / 2}
 				r={radius}
 				strokeWidth={`${strokeWidth}px`}
-				// Start progress marker at 12 O'Clock
 				transform={`rotate(-90 ${sqSize / 2} ${sqSize / 2})`}
 				style={{
 					strokeDasharray: dashArray,
 					strokeDashoffset: dashOffset,
 				}}
 			/>
-			<text
-				className="circle-text"
-				x="50%"
-				y="50%"
-				dy=".3em"
-				textAnchor="middle"
-			>
+			<text className="circle-text" x="50%" y="50%" dy=".3em">
 				{`${percentage}%`}
 			</text>
 		</svg>

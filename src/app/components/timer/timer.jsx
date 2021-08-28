@@ -6,6 +6,7 @@ export default class Timer extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			totalSeconds: 0,
 			secondsLeft: 0,
 			timeLeft: {},
 		};
@@ -30,7 +31,8 @@ export default class Timer extends React.Component {
 		const { timeLeft } = this.state;
 		timeLeft[e.target.name] = e.target.value;
 		const secondsLeft = timeConvertToSeconds(timeLeft);
-		this.setState({ timeLeft, secondsLeft });
+		const totalSeconds = secondsLeft;
+		this.setState({ timeLeft, secondsLeft, totalSeconds });
 	}
 
 	startTimer() {
@@ -55,11 +57,17 @@ export default class Timer extends React.Component {
 	}
 
 	render() {
-		const { timeLeft } = this.state;
+		const { timeLeft, totalSeconds, secondsLeft } = this.state;
 		const { id, format } = this.props;
 		return (
-			<div id={id}>
-				<Clock time={timeLeft} format={format} />
+			<div id={id} style={{ paddingTop: '15px' }}>
+				<Clock
+					time={timeLeft}
+					format={format}
+					strokeWidth="10"
+					sqSize="200"
+					percentage={timePercentsLeft(totalSeconds, secondsLeft)}
+				/>
 				<InputForm
 					onFormInputChange={this.onFormInputChange}
 					buttonClick={this.startTimer}
@@ -68,6 +76,10 @@ export default class Timer extends React.Component {
 			</div>
 		);
 	}
+}
+
+function timePercentsLeft(totalTime, timeLeft) {
+	return (timeLeft / totalTime) * 100;
 }
 
 function timeConvertToFormat(timeInSec, format = 'toHrs') {

@@ -6,7 +6,7 @@ export default class RoundProgressBar extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			percentage: 25,
+			percentage: 0,
 		};
 
 		this.handleChangeEvent = this.handleChangeEvent.bind(this);
@@ -21,7 +21,7 @@ export default class RoundProgressBar extends React.Component {
 	render() {
 		const { percentage } = this.state;
 		return (
-			<div>
+			<div style={{ paddingTop: '20px' }}>
 				<ProgressBarRound
 					strokeWidth="10"
 					sqSize="200"

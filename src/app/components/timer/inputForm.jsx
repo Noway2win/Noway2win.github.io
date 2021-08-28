@@ -7,22 +7,58 @@ export default class InputForm extends React.Component {
 		switch (format) {
 			case 'toSec': {
 				inputs.push(
-					<input key="s" type="number" name="s" onChange={onFormInputChange} />
+					<input
+						className="time-input"
+						key="s"
+						type="number"
+						name="s"
+						onChange={onFormInputChange}
+					/>
 				);
 				break;
 			}
 			case 'toMin': {
 				inputs.push(
-					<input key="m" type="number" name="m" onChange={onFormInputChange} />,
-					<input key="s" type="number" name="s" onChange={onFormInputChange} />
+					<input
+						className="time-input"
+						key="m"
+						type="number"
+						name="m"
+						onChange={onFormInputChange}
+					/>,
+					<input
+						className="time-input"
+						key="s"
+						type="number"
+						name="s"
+						onChange={onFormInputChange}
+					/>
 				);
 				break;
 			}
 			default: {
 				inputs.push(
-					<input key="h" type="number" name="h" onChange={onFormInputChange} />,
-					<input key="m" type="number" name="m" onChange={onFormInputChange} />,
-					<input key="s" type="number" name="s" onChange={onFormInputChange} />
+					<input
+						className="time-input"
+						key="h"
+						type="number"
+						name="h"
+						onChange={onFormInputChange}
+					/>,
+					<input
+						className="time-input"
+						key="m"
+						type="number"
+						name="m"
+						onChange={onFormInputChange}
+					/>,
+					<input
+						className="time-input"
+						key="s"
+						type="number"
+						name="s"
+						onChange={onFormInputChange}
+					/>
 				);
 				break;
 			}
@@ -30,6 +66,7 @@ export default class InputForm extends React.Component {
 
 		return (
 			<form
+				className="input-form"
 				onSubmit={(e) => {
 					e.preventDefault();
 					onFormInputChange(e);
