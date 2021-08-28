@@ -63,3 +63,4 @@ ul {
 .winning-hightlight {
 	background: gold;
 }
+@import './progressBar.css';

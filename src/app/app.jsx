@@ -1,6 +1,7 @@
 import React from 'react';
 import Game from './components/ticTacToeGame/gameComponent';
 import Timer from './components/timer/timer';
+import RoundProgressBar from './components/progressBar/progressBar';
 
 export default function App(props) {
 	return (
@@ -10,6 +11,7 @@ export default function App(props) {
 			<Timer id="timer-2" format="toMin" />
 			<Timer id="timer-3" format="toSec" />
 			<Timer id="timer-1" format="toErr" />
+			<RoundProgressBar />
 		</div>
 	);
 }
