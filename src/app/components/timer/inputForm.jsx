@@ -70,7 +70,7 @@ export default class InputForm extends React.Component {
 				onSubmit={(e) => {
 					e.preventDefault();
 					onFormInputChange(e);
-					buttonClick();
+					buttonClick(e);
 				}}
 			>
 				{inputs}

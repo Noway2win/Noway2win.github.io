@@ -35,7 +35,8 @@ export default class Timer extends React.Component {
 		this.setState({ timeLeft, secondsLeft, totalSeconds });
 	}
 
-	startTimer() {
+	startTimer(e) {
+		e.target.reset();
 		const { secondsLeft } = this.state;
 		if (this.timer === 0 && secondsLeft > 0) {
 			this.timer = setInterval(this.countDown, 1000);
@@ -79,7 +80,8 @@ export default class Timer extends React.Component {
 }
 
 function timePercentsLeft(totalTime, timeLeft) {
-	return (timeLeft / totalTime) * 100;
+	const res = totalTime > 0 ? (timeLeft / totalTime) * 100 : 0;
+	return res;
 }
 
 function timeConvertToFormat(timeInSec, format = 'toHrs') {

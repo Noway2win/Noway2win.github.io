@@ -2,6 +2,13 @@ import React from 'react';
 
 export default function Clock(props) {
 	const { time, format, sqSize, strokeWidth, percentage } = props;
+	let stroke = 'green';
+	if (percentage < 50) {
+		stroke = 'yellow';
+	}
+	if (percentage < 25) {
+		stroke = 'red';
+	}
 	let shownTime;
 	switch (format) {
 		case 'toSec': {
@@ -41,6 +48,7 @@ export default function Clock(props) {
 					style={{
 						strokeDasharray: dashArray,
 						strokeDashoffset: dashOffset,
+						stroke,
 					}}
 				/>
 				<text className="circle-text" x="50%" y="50%" dy=".3em">
