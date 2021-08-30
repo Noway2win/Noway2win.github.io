@@ -12,10 +12,6 @@ module.exports = merge(config, {
 		open: true,
 		compress: false,
 		port: 8097,
-		static: {
-			directory: path.join(__dirname, './dist'),
-			publicPath: '/assets',
-		},
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
