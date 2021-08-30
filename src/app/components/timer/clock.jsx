@@ -29,7 +29,7 @@ export default function Clock(props) {
 	const dashArray = radius * Math.PI * 2;
 	const dashOffset = dashArray - (dashArray * percentage) / 100;
 	return (
-		<div>
+		<>
 			<svg width={sqSize} height={sqSize} viewBox={viewBox}>
 				<circle
 					className="circle-background"
@@ -55,6 +55,6 @@ export default function Clock(props) {
 					{shownTime}
 				</text>
 			</svg>
-		</div>
+		</>
 	);
 }

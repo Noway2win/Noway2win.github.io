@@ -117,9 +117,6 @@ function timeConvertToFormat(timeInSec, format = 'toHrs') {
 	return obj;
 }
 
-function timeConvertToSeconds(timeInHMS) {
-	const hours = timeInHMS.h || 0;
-	const minutes = timeInHMS.m || 0;
-	const seconds = timeInHMS.s || 0;
-	return hours * 60 * 60 + minutes * 60 + +seconds;
+function timeConvertToSeconds({ h = 0, m = 0, s = 0 }) {
+	return h * 60 * 60 + m * 60 + +s;
 }
