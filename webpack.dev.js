@@ -12,6 +12,10 @@ module.exports = merge(config, {
 		open: true,
 		compress: false,
 		port: 8097,
+		static: {
+			directory: path.join(__dirname, './dist'),
+			publicPath: '/assets',
+		},
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
@@ -22,6 +26,10 @@ module.exports = merge(config, {
 	],
 	module: {
 		rules: [
+			{
+				test: /\.styl$/,
+				use: ['style-loader', 'css-loader', 'stylus-loader'],
+			},
 			{
 				test: /\.css$/,
 				use: ['style-loader', 'css-loader'],

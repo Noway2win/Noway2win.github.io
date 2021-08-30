@@ -65,3 +65,4 @@ ul {
 }
 @import './progressBar.css';
 @import './timer.css';
+@import 'bootstrap';

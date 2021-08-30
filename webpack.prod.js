@@ -29,6 +29,10 @@ module.exports = merge(config, {
 				use: [MiniCssExtractPlugin.loader, 'css-loader'],
 			},
 			{
+				test: /\.styl$/,
+				use: [MiniCssExtractPlugin.loader, 'css-loader', 'stylus-loader'],
+			},
+			{
 				test: /\.m?js|jsx$/,
 				exclude: /node_modules/,
 				use: {
