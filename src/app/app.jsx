@@ -17,7 +17,7 @@ export default function App(props) {
 	};
 	return (
 		<Provider store={store}>
-			<Router history={history}>
+			<Router>
 				<div>
 					<Header />
 					<Route path="/TicTacGame" component={Game} />
@@ -26,7 +26,7 @@ export default function App(props) {
 						render={() => <Timer id="timer-1" format="toHrs" />}
 					/>
 					<Route
-						path="/MinutesTimer"
+						path="/MinuteTimer"
 						render={() => <Timer id="timer-2" format="toMin" />}
 					/>
 					<Route
