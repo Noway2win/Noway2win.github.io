@@ -1,0 +1,68 @@
+body {
+	margin: 20px;
+
+	font: 14px 'Century Gothic', Futura, sans-serif;
+}
+
+ol,
+ul {
+	padding-left: 30px;
+}
+
+.board-row:after {
+	display: table;
+	clear: both;
+
+	content: '';
+}
+
+.status {
+	margin-bottom: 10px;
+}
+
+.square {
+	float: left;
+
+	width: 34px;
+	height: 34px;
+	margin-top: -1px;
+	margin-right: -1px;
+	padding: 0;
+
+	text-align: center;
+
+	border: 1px solid #999999;
+	background: #ffffff;
+
+	font-size: 24px;
+	font-weight: bold;
+	line-height: 34px;
+}
+
+.square:focus {
+	outline: none;
+}
+
+.kbd-navigation .square:focus {
+	background: #dddddd;
+}
+
+.game {
+	display: flex;
+	flex-direction: row;
+}
+
+.game-info {
+	margin-left: 20px;
+}
+
+.bolded {
+	font-weight: bold;
+	font-style: italic;
+}
+.winning-hightlight {
+	background: gold;
+}
+@import './progressBar.css';
+@import './timer.css';
+@import 'bootstrap';
