@@ -6,6 +6,11 @@ const config = require('./webpack.config')
 
 module.exports = merge(config, {
 	mode: 'development',
+	output: {
+		path: path.resolve(__dirname, './dist'),
+		filename: 'bundle.js',
+		publicPath: '/'
+	},
 	devServer: {
 		historyApiFallback: true,
 		contentBase: path.resolve(__dirname, './dist'),

@@ -1,16 +1,29 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Main from './components/Main';
+import App from './components/App';
 import Single from './components/Single';
 import PhotoGrid from './components/PhotoGrid';
 
-export default function ReduxTagram(props) {
+export default function ReduxTagram() {
 	return (
-		<Main>
-			<Switch>
-				<Route exact path="/" component={PhotoGrid} />
-				<Route path="/view/:postId" component={Single} />
-			</Switch>
-		</Main>
+		<Switch>
+			<Route
+				exact
+				path="/"
+				render={() => (
+					<App>
+						<PhotoGrid />
+					</App>
+				)}
+			/>
+			<Route
+				path="/view/:postId"
+				render={({ match }) => (
+					<App>
+						<Single params={match.params} />
+					</App>
+				)}
+			/>
+		</Switch>
 	);
 }
